@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\EventsHubApplication\EventsHub.Application.csproj" />
+    <ProjectReference Include="..\EventsHub.Persistence\EventsHub.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

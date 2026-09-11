@@ -1,7 +1,7 @@
-using Domain;
+using EventsHub.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Persistence;
+namespace EventsHub.Persistence;
 
 public static class DbInitializer
 {
