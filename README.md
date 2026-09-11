@@ -1,2 +1,2 @@
-# ActivitieHub
-ICI 2026 
+# EventsHub
+ICI 2026 01

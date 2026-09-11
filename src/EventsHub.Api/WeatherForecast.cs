@@ -1,4 +1,4 @@
-namespace API;
+namespace EventsHub.Api;
 
 public class WeatherForecast
 {
