@@ -1,4 +1,6 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState } from 'react'
+import * as Mui from '@mui/material'
+
 
 type Activity = {
   id: string;
@@ -18,14 +20,19 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h3 style={{ color: 'blue' }}>Welcome to EventsHub</h3>
-      <ul>
-        {activities.map((activity) => (
-          <li key={activity.id}>{activity.title}</li>
+    <>
+      <Mui.Typography variant="h3" sx={{ color: 'blue' }}>
+        Welcome to EventsHub
+      </Mui.Typography>
+
+      <Mui.List>
+        {activities.map((activity: Activity) => (
+          <Mui.ListItem key={activity.id}> 
+            <Mui.ListItemText>{activity.title}</Mui.ListItemText>
+            </Mui.ListItem>
         ))}
-      </ul>
-    </div>
+      </Mui.List>
+    </>
   )
 }
 
