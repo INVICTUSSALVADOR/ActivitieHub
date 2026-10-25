@@ -1,5 +1,7 @@
 import {useEffect, useState } from 'react'
 import * as Mui from '@mui/material'
+import axios from 'axios';
+
 
 
 type Activity = {
@@ -11,9 +13,8 @@ function App() {
   const [activities, setActivities] = useState<Activity[]>([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/events`)
-      .then((response) => response.json())
-      .then(data => setActivities(data))
+    axios.get<Activity[]>(`${import.meta.env.VITE_API_URL}/events`)
+      .then(response => setActivities(response.data))
 
       return () => {};
     
