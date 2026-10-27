@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using EventsHub.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +17,7 @@ public class GlobalTestSetup
                 .Options;
         AppDbContext = new AppDbContext(options);
         await AppDbContext.Database.MigrateAsync();
-        await DbInitializer.SeedData(AppDbContext);
+        await DbInitializer.SeedDataAsync(AppDbContext);
     }
 
     [OneTimeTearDown]

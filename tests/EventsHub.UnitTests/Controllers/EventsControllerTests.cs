@@ -57,9 +57,8 @@ public class EventsControllerTests
 
         Assert.Multiple(() =>
         {
-            Assert.That(notFoundResult.Value, Is.EqualTo("the event was not found"));
+            Assert.That(notFoundResult.Value, Is.EqualTo("The event was not found"));
             Assert.That(notFoundResult.StatusCode, Is.EqualTo(404));
         });
     }
 }
- 

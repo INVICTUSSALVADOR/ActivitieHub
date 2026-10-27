@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventsHub.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261025200139_PascalCaseEventProperties")]
-    partial class PascalCaseEventProperties
+    [Migration("20260828131904_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

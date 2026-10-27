@@ -1,38 +1,27 @@
-import {useEffect, useState } from 'react'
-import * as Mui from '@mui/material'
-import axios from 'axios';
-
-
-
-type Activity = {
-  id: string;
-  title: string;
-}
+import { List, ListItem, ListItemText, Typography } from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react"
 
 function App() {
   const [activities, setActivities] = useState<Activity[]>([]);
 
   useEffect(() => {
-    axios.get<Activity[]>(`${import.meta.env.VITE_API_URL}/events`)
-      .then(response => setActivities(response.data))
+    axios.get<Activity[]>('https://localhost:5001/api/v1/events')
+      .then(response => setActivities(response.data));
 
-      return () => {};
-    
+    return () => { };
   }, []);
 
   return (
     <>
-      <Mui.Typography variant="h3" sx={{ color: 'blue' }}>
-        Welcome to EventsHub
-      </Mui.Typography>
-
-      <Mui.List>
+      <Typography variant="h3">Events Hub</Typography>
+      <List>
         {activities.map((activity: Activity) => (
-          <Mui.ListItem key={activity.id}> 
-            <Mui.ListItemText>{activity.title}</Mui.ListItemText>
-            </Mui.ListItem>
+          <ListItem key={activity.id}>
+            <ListItemText>{activity.title}</ListItemText>
+          </ListItem>
         ))}
-      </Mui.List>
+      </List>
     </>
   )
 }

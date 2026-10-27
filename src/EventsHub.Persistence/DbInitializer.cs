@@ -1,13 +1,12 @@
 using EventsHub.Domain;
-using Microsoft.EntityFrameworkCore;
 
 namespace EventsHub.Persistence;
 
 public static class DbInitializer
 {
-    public static async Task SeedData(AppDbContext context)
+    public static async Task SeedDataAsync(AppDbContext context)
     {
-        if (await context.Events.AnyAsync()) return;
+        if (context.Events.Any()) return;
 
         var events = new List<Event>
         {
@@ -114,6 +113,7 @@ public static class DbInitializer
         };
 
         context.Events.AddRange(events);
+
         await context.SaveChangesAsync();
     }
 }

@@ -100,8 +100,8 @@
           "category",
           "city",
           "venue",
-          "longitude",
-          "latitude"
+          "latitude",
+          "longitude"
         ],
         "properties": {
           "id": {
@@ -129,10 +129,10 @@
           "venue": {
             "type": "string"
           },
-          "longitude": {
+          "latitude": {
             "type": "string"
           },
-          "latitude": {
+          "longitude": {
             "type": "string"
           }
         }
