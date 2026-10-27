@@ -10,7 +10,7 @@ export default function ActivityForm() {
                 <TextField label="Title"></TextField>
                 <TextField label="Description" multiline rows={3}></TextField>
                 <TextField label="Category"></TextField>
-                <TextField label="Date" type="datetime"></TextField>
+                <TextField label="Date" type="date"></TextField>
                 <TextField label="City"></TextField>
                 <TextField label="Venue"></TextField>
                 <Box sx={{display: 'flex', justifyContent: 'end', gap: 3}}>
