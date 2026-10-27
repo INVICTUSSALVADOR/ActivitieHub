@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
 import ActivityList from "./ActivityList";
 import ActivityDetail from "../details/ActivityDetail";
-import ActivityForm from "../../form/ActivityForm";
+import ActivityForm from "../form/ActivityForm";
 
 type Props = {
     activities: Activity[];
