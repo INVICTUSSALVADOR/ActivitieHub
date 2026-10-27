@@ -2,7 +2,7 @@ namespace EventsHub.Domain;
 
 public class Event
 {
-    public string id { get; set; } = Guid.NewGuid().ToString();
+    public string Id { get; set; } = Guid.NewGuid().ToString();
     public required string Title { get; set; }
     public DateTime Date { get; set; }
     public required string Description { get; set; }
@@ -10,7 +10,6 @@ public class Event
     public bool IsCancelled { get; set; }
     public required string City { get; set; }
     public required string Venue { get; set; }
-    public required string longitude { get; set; }
-    public required string latitude { get; set; }
-
+    public required string Latitude { get; set; }
+    public required string Longitude { get; set; }
 }

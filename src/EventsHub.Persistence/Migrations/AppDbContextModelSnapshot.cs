@@ -19,7 +19,7 @@ namespace EventsHub.Persistence.Migrations
 
             modelBuilder.Entity("EventsHub.Domain.Event", b =>
                 {
-                    b.Property<string>("id")
+                    b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Category")
@@ -40,6 +40,14 @@ namespace EventsHub.Persistence.Migrations
                     b.Property<bool>("IsCancelled")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Latitude")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Longitude")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -48,15 +56,7 @@ namespace EventsHub.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("latitude")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("longitude")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Events");
                 });

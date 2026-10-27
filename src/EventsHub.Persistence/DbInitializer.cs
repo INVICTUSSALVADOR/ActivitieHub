@@ -1,13 +1,12 @@
 using EventsHub.Domain;
-using Microsoft.EntityFrameworkCore;
 
 namespace EventsHub.Persistence;
 
 public static class DbInitializer
 {
-    public static async Task SeedData(AppDbContext context)
+    public static async Task SeedDataAsync(AppDbContext context)
     {
-        if (await context.Events.AnyAsync()) return;
+        if (context.Events.Any()) return;
 
         var events = new List<Event>
         {
@@ -18,8 +17,8 @@ public static class DbInitializer
                 Category = "culture",
                 City = "Tinúm, Yucatán",
                 Venue = "Chichén Itzá",
-                latitude = "20.6843",
-                longitude = "-88.5678"
+                Latitude = "20.6843",
+                Longitude = "-88.5678"
             },
             new() {
                 Title = "Past Event 2",
@@ -28,8 +27,8 @@ public static class DbInitializer
                 Category = "music",
                 City = "San Juan Teotihuacán, Estado de México",
                 Venue = "Pirámide del Sol, Teotihuacán",
-                latitude = "19.6925",
-                longitude = "-98.8438"
+                Latitude = "19.6925",
+                Longitude = "-98.8438"
             },
             new() {
                 Title = "Past Event 3",
@@ -38,8 +37,8 @@ public static class DbInitializer
                 Category = "drinks",
                 City = "Ciudad de México",
                 Venue = "Zócalo (Plaza de la Constitución)",
-                latitude = "19.4326",
-                longitude = "-99.1332"
+                Latitude = "19.4326",
+                Longitude = "-99.1332"
             },
             new() {
                 Title = "Past Event 4",
@@ -48,8 +47,8 @@ public static class DbInitializer
                 Category = "culture",
                 City = "Ciudad de México",
                 Venue = "Palacio de Bellas Artes",
-                latitude = "19.4352",
-                longitude = "-99.1412"
+                Latitude = "19.4352",
+                Longitude = "-99.1412"
             },
             new() {
                 Title = "Past Event 5",
@@ -58,8 +57,8 @@ public static class DbInitializer
                 Category = "music",
                 City = "Cancún, Quintana Roo",
                 Venue = "Playa Delfines",
-                latitude = "21.0997",
-                longitude = "-86.7561"
+                Latitude = "21.0997",
+                Longitude = "-86.7561"
             },
             new() {
                 Title = "Future Event 1",
@@ -68,8 +67,8 @@ public static class DbInitializer
                 Category = "drinks",
                 City = "Guanajuato, Guanajuato",
                 Venue = "Callejón del Beso",
-                latitude = "21.0190",
-                longitude = "-101.2574"
+                Latitude = "21.0190",
+                Longitude = "-101.2574"
             },
             new() {
                 Title = "Future Event 2",
@@ -78,8 +77,8 @@ public static class DbInitializer
                 Category = "culture",
                 City = "Ciudad de México",
                 Venue = "Xochimilco (Trajineras)",
-                latitude = "19.2828",
-                longitude = "-99.1036"
+                Latitude = "19.2828",
+                Longitude = "-99.1036"
             },
             new() {
                 Title = "Future Event 3",
@@ -88,8 +87,8 @@ public static class DbInitializer
                 Category = "music",
                 City = "Ciudad de México",
                 Venue = "Basílica de Guadalupe",
-                latitude = "19.4847",
-                longitude = "-99.1176"
+                Latitude = "19.4847",
+                Longitude = "-99.1176"
             },
             new() {
                 Title = "Future Event 4",
@@ -98,8 +97,8 @@ public static class DbInitializer
                 Category = "drinks",
                 City = "Tulum, Quintana Roo",
                 Venue = "Zona Arqueológica de Tulum",
-                latitude = "20.2114",
-                longitude = "-87.4287"
+                Latitude = "20.2114",
+                Longitude = "-87.4287"
             },
             new() {
                 Title = "Future Event 5",
@@ -108,12 +107,13 @@ public static class DbInitializer
                 Category = "culture",
                 City = "Guadalajara, Jalisco",
                 Venue = "Palacio de Gobierno de Jalisco",
-                latitude = "20.6767",
-                longitude = "-103.3475"
+                Latitude = "20.6767",
+                Longitude = "-103.3475"
             }
         };
 
         context.Events.AddRange(events);
+
         await context.SaveChangesAsync();
     }
 }
