@@ -4,7 +4,6 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <DefaultItemExcludes>$(DefaultItemExcludes);eventshub.db*</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,8 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EventsHubApplication\EventsHub.Application.csproj" />
-    <ProjectReference Include="..\EventsHub.Persistence\EventsHub.Persistence.csproj" />
+    <ProjectReference Include="..\EventsHub.Application\EventsHub.Application.csproj" />
   </ItemGroup>
 
 </Project>

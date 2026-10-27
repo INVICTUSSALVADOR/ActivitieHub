@@ -1,4 +1,4 @@
-  # Manual setup — OpenAPI doc generation + typed client for the EventsHub API
+# Manual setup — OpenAPI doc generation + typed client for the EventsHub API
 
 This is the full procedure for standing up OpenAPI support for the EventsHub
 backend: a standalone doc-generation host (`EventsHub.OpenApi`), an NSwag

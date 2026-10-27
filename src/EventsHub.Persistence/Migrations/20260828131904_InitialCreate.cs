@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EventsHub.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitiaCreate : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,7 @@ namespace EventsHub.Persistence.Migrations
                 name: "Events",
                 columns: table => new
                 {
-                    id = table.Column<string>(type: "TEXT", nullable: false),
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
                     Date = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
@@ -23,12 +23,12 @@ namespace EventsHub.Persistence.Migrations
                     IsCancelled = table.Column<bool>(type: "INTEGER", nullable: false),
                     City = table.Column<string>(type: "TEXT", nullable: false),
                     Venue = table.Column<string>(type: "TEXT", nullable: false),
-                    longitude = table.Column<string>(type: "TEXT", nullable: false),
-                    latitude = table.Column<string>(type: "TEXT", nullable: false)
+                    Latitude = table.Column<string>(type: "TEXT", nullable: false),
+                    Longitude = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Events", x => x.id);
+                    table.PrimaryKey("PK_Events", x => x.Id);
                 });
         }
 
